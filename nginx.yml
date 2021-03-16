@@ -1,0 +1,20 @@
+---
+- hosts: "{{ service | default('all')}}"
+  become: yes
+  tasks:
+    - name: copy
+      copy:
+        src: test.txt
+        dest: /home/ubuntu/
+    - name: ensure nginx is at the latest version
+      apt: name=nginx state=latest
+    - name: start nginx
+      service:
+          name: nginx
+          state: started
+    - name: install java
+      apt: name=default-jdk state=latest
+    - name: install busybox
+      apt: name=busybox state=latest
+    - name: install python
+      apt: name=python3 state=latest
