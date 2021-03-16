@@ -13,6 +13,7 @@ In playbook.yml (here nginx.yml)
 define host and give default value. so that you can pass the host as arg variable.
 
 ex: *ansible-playbook -i fhost.py nginx.yml -e service=node*
-in this the task will execute only on host named NODE eventhough our script exract IPs of all the machines running on cloud(AWS)
+
+In this the task will execute only on host named NODE eventhough our script exract IPs of all the machines running on cloud(AWS)
 
 
