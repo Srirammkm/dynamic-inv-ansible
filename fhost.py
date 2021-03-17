@@ -13,7 +13,7 @@ def tag(ec2):
                     services.append(name)
     return services
 def hosts(ec2,service):
-#ansible is the tag name in AWS
+#ansible is the tag name in AWS. You can change as per your need
     node = {'Name':'tag:Ansible','Values':[service]}
     host = []
     for instance in ec2.instances.filter(Filters=[node]):
