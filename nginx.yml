@@ -1,5 +1,6 @@
 ---
 - hosts: "{{ service | default('all')}}"
+  user: "{{ ec2_tag_user }}"
   become: yes
   tasks:
     - name: copy
